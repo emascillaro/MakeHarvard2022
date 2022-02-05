@@ -12,4 +12,6 @@ print(text)
 
 for i in text:
     print(f"The current character is {i}")
+    os.system(f"cd {i}")
     os.system(f"arduino --upload {i}.ino --port /dev/ttyUSB*")
+    os.system("cd ..")
