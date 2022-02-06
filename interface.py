@@ -3,8 +3,11 @@ from PIL import Image,ImageTk
 import PIL.Image
 import pytesseract
 import cv2
-from tkinter import *
 import tkinter as tk
+
+from tkinter import *
+from ttkthemes import ThemedStyle
+
 
 width, height = 800, 600
 cap = cv2.VideoCapture(0)
@@ -16,6 +19,10 @@ root.bind('<Escape>', lambda e: root.quit())
 lmain = Label(root)
 lmain.pack()
 
+#style = ThemedStyle(root)
+#style.set_theme("black")
+
+root.configure(bg = 'black')
 
 def show_frame():
     ret, frame = cap.read()
@@ -26,6 +33,7 @@ def show_frame():
         lmain.imgtk = imgtk
         lmain.configure(image=imgtk)
         lmain.after(10, show_frame)
+        lmain.pack(padx=15, pady=20)
 
 def capture_image():
     #videoCaptureObject = cv2.VideoCapture(0)
@@ -35,11 +43,11 @@ def capture_image():
     #videoCaptureObject.release()
 
 # Button Picture
-im = PIL.Image.open("/home/emascillaro/Documents/Emma/Hackathons/MakeMIT_2022/MakeMIT2022/thumbnail_capture_button.png")
+im = PIL.Image.open("/home/emascillaro/Documents/Emma/Hackathons/MakeMIT_2022/MakeMIT2022/thumbnail_capture_button3.png")
 ph = ImageTk.PhotoImage(im)
 
-image_capture = tk.Button(image = ph, command = capture_image)
-image_capture.pack()
+image_capture = tk.Button(image = ph, command = capture_image, bg = 'red', fg= '#fff', activebackground='green', activeforeground='#fff')
+image_capture.pack(side = BOTTOM, padx=15, pady=70)
 
 print("Opening Application")
 

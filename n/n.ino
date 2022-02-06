@@ -32,7 +32,6 @@ void setup() {
 
 void loop() {
   if (letter == "n" || letter == "N") {
-    if (ran == false) {
       delay(1000);
       servo7.write(180);
       servo6.write(180);
@@ -45,7 +44,7 @@ void loop() {
       servo3.write(0);
       delay(1000);
       exit(0);
-    }
   }
-  ran = true;
 }
+
+exit(0);
