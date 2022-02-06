@@ -4,36 +4,14 @@ import os
 import re
 import time
 import PIL
-from PIL import Image,ImageTk
+#from PIL import Image,ImageTk
+import PIL.Image
 from tkinter import *
 import tkinter as tk
 
 from interface import capture_image
 from image_to_text import image_to_text_string
 from interface import show_frame
-
-
-# Create Tkinter Window
-width, height = 800, 600
-cap = cv2.VideoCapture(-1)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, width)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
-
-root = Tk()
-root.bind('<Escape>', lambda e: root.quit())
-lmain = Label(root)
-lmain.pack()
-
-# Takes image when button is pressed
-image_capture = tk.Button(text="Take Picture", command = capture_image)
-image_capture.pack()
-
-print("Opening Application")
-
-show_frame()
-root.mainloop()
-
-
 
 # Save and Process Text
 text = image_to_text_string().lower()
