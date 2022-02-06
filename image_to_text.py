@@ -1,10 +1,10 @@
 import cv2
-from image_capture import Capture_image
+from interface import capture_image
 import pytesseract
 
 def image_to_text_string():
     # Takes image
-    Capture_image()
+    #capture_image()
 
     # Reads Image
     img = cv2.imread("Capture_Image.jpg")

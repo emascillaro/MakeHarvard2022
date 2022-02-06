@@ -5,7 +5,7 @@ import time
 def Capture_image():
     # Define which camera to use (0 = webcam)
     videoCaptureObject = cv2.VideoCapture(0)
-    time.sleep(2)
+    #time.sleep(2)
 
     result = True
     while(result):
